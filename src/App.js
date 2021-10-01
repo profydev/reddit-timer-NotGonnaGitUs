@@ -7,13 +7,15 @@ import {
 } from 'react-router-dom';
 import Home from './pages/home';
 import Search from './pages/search';
+import Header from './Header';
 import GlobalStyle from './css/globalStyles';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <div>App Placeholder</div>
+      <Header />
+      <div>Skeleton for Reddit Timer App</div>
       <Router>
         <Switch>
           <Route path="/" component={Home} exact />
