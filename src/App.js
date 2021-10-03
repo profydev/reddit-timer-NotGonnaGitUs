@@ -1,27 +1,29 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { Normalize } from 'styled-normalize';
+import GlobalStyle from './css/globalStyles';
+import theme from './theme';
 import Home from './pages/home';
 import Search from './pages/search';
-import GlobalStyle from './css/globalStyles';
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <div>App Placeholder</div>
+    <ThemeProvider theme={theme}>
       <Router>
+        <Normalize />
+        <GlobalStyle />
         <Switch>
-          <Route path="/" component={Home} exact />
           <Route path="/search" component={Search} />
-          <Redirect to="/" />
+          <Route path="/" component={Home} />
         </Switch>
       </Router>
-    </>
+    </ThemeProvider>
+
   );
 }
 
