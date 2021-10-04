@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import GlobalStyle from './css/globalStyles';
 import theme from './theme';
+import Header from './components/Header';
 import Home from './pages/home';
 import Search from './pages/search';
 
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <Normalize />
         <GlobalStyle />
+        <Header />
         <Switch>
           <Route path="/search" component={Search} />
           <Route path="/" component={Home} />
